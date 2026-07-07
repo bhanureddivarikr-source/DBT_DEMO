@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: source
+    database: AIRBNB
+    schema: RAW
+
+    tables:
+      - name: RAW_HOSTS
+      - name: RAW_LISTINGS
