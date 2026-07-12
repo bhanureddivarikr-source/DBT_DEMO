@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: God_mode
+    database: god
+    schema: raw_god_schema
+    description: This table loads data from raw to stage
+    loader: snowpipe
+
+
+    tables:
+      - name: cust
+        identifier: customer
+        description: This is just a table
+
+        columns:
+          - name: customer_id
+            description: Primary Key
+
+            tests:
+              - not_null
+              - unique
+
+          - name: gender
+
+            tests:
+              - accepted_values:
+                  arguments:
+                    values:
+                      - 'M'
+                      - 'F'
